@@ -165,6 +165,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="resources\images\btn.png" />
+    <Content Include="resources\images\close.png" />
+    <Content Include="resources\images\close2.png" />
+    <Content Include="resources\images\close3.png" />
+    <Content Include="resources\images\cross.png" />
+    <Content Include="resources\images\form-table-req-bg.gif" />
+    <Content Include="resources\images\icon-star-orange.png" />
+    <Content Include="resources\images\icon-star.png" />
+    <Content Include="resources\images\lingxing.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -175,6 +184,7 @@
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery-1.11.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-plugins\css\demo.css" />
     <Content Include="Scripts\jquery-plugins\demo-helper-jquery.js" />
     <Content Include="Scripts\jquery-plugins\demo.init.js" />
     <Content Include="Scripts\jquery-plugins\jquery.corner-2.13.js" />
@@ -226,7 +236,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\jquery-plugins\css\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

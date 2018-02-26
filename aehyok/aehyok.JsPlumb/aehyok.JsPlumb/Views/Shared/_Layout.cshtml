@@ -38,6 +38,127 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.10.4/js/jquery-ui-1.10.4.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-plugins/jquery.jsPlumb-1.6.2-min.js")" type="text/javascript"></script>
     @RenderSection("scripts", required: false)
+
+    <style type="text/css">
+        div.flow-container {
+        }
+
+        .node {
+            box-shadow: 2px 2px 19px #aaa;
+            -o-box-shadow: 2px 2px 19px #aaa;
+            -webkit-box-shadow: 2px 2px 19px #aaa;
+            -moz-box-shadow: 2px 2px 19px #aaa;
+            -moz-border-radius: 0.5em;
+            border-radius: 0.5em;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            border: 1px solid #346789;
+            width: 150px;
+            /*line-height: 40px;*/
+            text-align: center;
+            z-index: 20;
+            position: absolute;
+            background-color: #eeeeef;
+            color: black;
+            padding: 10px;
+            font-size: 9pt;
+            cursor: pointer;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .radius {
+            border-radius: 25em;
+        }
+
+        .node:hover {
+            box-shadow: 2px 2px 19px #444;
+            -o-box-shadow: 2px 2px 19px #444;
+            -webkit-box-shadow: 2px 2px 19px #444;
+            -moz-box-shadow: 2px 2px 19px #444;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+        }
+
+        .current {
+            background-color: #32cd32 !important;
+        }
+    </style>
+    <script type="text/javascript">
+        //右折线
+        var rightConnector = {
+            connector: "Flowchart",
+            anchors: ["RightMiddle", "LeftMiddle"],
+            paintStyle: { lineWidth: 1, strokeStyle: "#000000" },
+            overlays: [["Arrow", { width: 10, length: 10, location: 1 }]],
+            endpoint: ["Dot", { radius: 1 }]
+        };
+        //右直线
+        var rightStraightConnector = {
+            connector: "Straight",
+            anchors: ["RightMiddle", "LeftMiddle"],
+            paintStyle: { lineWidth: 1, strokeStyle: "#000000" },
+            overlays: [["Arrow", { width: 10, length: 10, location: 1 }]],
+            endpoint: ["Dot", { radius: 1 }]
+        };
+
+        //上折线
+        var upConnector = {
+            connector: "Flowchart",
+            anchors: ["TopCenter", "BottomCenter"],
+            paintStyle: { lineWidth: 1, strokeStyle: "#000000" },
+            overlays: [["Arrow", { width: 10, length: 10, location: 1 }]],
+            endpoint: ["Dot", { radius: 1 }]
+        };
+
+        var downConnector = {
+            connector: "Flowchart",
+            anchors: ["BottomCenter", "TopCenter"],
+            paintStyle: { lineWidth: 1, strokeStyle: "#000000" },
+            //paintStyle: { lineWidth: 2, strokeStyle: "#61b7cf", joinstyle: "round", outlineColor: "white", outlineWidth: 2 },
+            overlays: [["Arrow", { width: 10, length: 10, location: 1 }]],
+            endpoint: ["Dot", { radius: 1 }]
+        };
+
+        var flowConnector = {
+            connector: "Flowchart",
+            //anchors: ["BottomCenter", "TopCenter"],
+            paintStyle: { lineWidth: 2, strokeStyle: "#61B7CF", fillStyle: "transparent" },
+            //paintStyle: { lineWidth: 2, strokeStyle: "#61b7cf", joinstyle: "round", outlineColor: "white", outlineWidth: 2 },
+            overlays: [["Arrow", { width: 10, length: 10, location: 1 }]],
+            endpoint: ["Dot", { radius: 1 }]
+        };
+        jsPlumb.ready(function () {
+            //jsPlumb.draggable($(".node"));
+        });
+
+        function autoAlign() {
+            var top = 10;
+            $(".node").each(function () {
+                $(this).css("top", top);
+                top += $(this).height() + 60;
+            });
+        }
+
+        function autoAlignDown() {
+            //var arrLevel = new Array();
+            //var i = 0;
+            //$(".node").each(function () {
+            //	var id = $(this).attr("id");
+            //	var targetNodes = $(this).attr("targetNodes").split(',');
+            //	for (var j = 0; j < targetNodes.length; j++) {
+            //		arrLevel[targetNodes] = arrLevel[id] + 1;
+            //	}
+
+            //	arr[i] = [$(this), "", ""];
+            //	i++;
+            //	$(this).css("top", top);
+            //	top += $(this).height() + 60;
+            //});
+        }
+    </script>
 </body>
 </html>
