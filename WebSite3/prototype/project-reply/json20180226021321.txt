@@ -1,0 +1,1 @@
+﻿[{"ConnectionId":"con_22","PageSourceId":"state_start1","PageTargetId":"state_flow2","SourceText":"\u5f00\u59cb","TargetText":"\u6d41\u7a0b","SourceAnchor":"BottomCenter","TargetAnchor":"TopCenter"}]&[{"BlockId":"state_start1","BlockContent":"\u5f00\u59cb","BlockX":215,"BlockY":101},{"BlockId":"state_flow2","BlockContent":"\u6d41\u7a0b","BlockX":214,"BlockY":356}]

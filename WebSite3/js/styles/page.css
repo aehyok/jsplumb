@@ -1,0 +1,199 @@
+﻿/*width*/
+.width-short	{	width: 50px;}
+.width-medium	{	width: 200px;}
+.width-long		{	width: 400px;}
+.width-datetime	{	width: 120px; min-width: 120px;}/*一个日期时间的宽度*/
+
+/*input*/
+input[type=text], input[type=password], textarea
+{
+	border: 1px solid #000000;
+	padding: 2px;
+}
+
+/*textarea*/
+textarea					{	height: 50px;}
+textarea.multiline			{	width: 400px; height: 100px;}
+input[type=text].multiline	{	width: 400px; height: 100px;}
+
+/*button*/
+input[type=submit], input[type=button]	{	background-color: #dedede; letter-spacing: 1px;}
+input[type=submit].pass					{	background-color: #aae649;}
+input[type=submit].back					{	background-color: #ffa9d0;}
+
+/*message div*/
+div.message-container
+{
+}
+div.message
+{
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	line-height: 18px;
+}
+div.message-info
+{
+	border: solid 5px #84da54;
+	background-color: #c8ffbf;
+}
+div.message-warn
+{
+	border: solid 5px #f0d22a;
+	background-color: #f4e684;
+}
+div.message-error
+{
+	border: solid 5px #f3afb5;
+	background-color: #ffdfdf;
+}
+
+/*layout*/
+div.header, div.subheader
+{
+	background-color: #dedede;
+	border: solid 1px #cccccc;
+	padding-right: 5px;
+	line-height: 24px;
+	margin-bottom: 5px;
+	/*font-size: 10.5pt;*/
+	letter-spacing: 1px;
+}
+div.header
+{
+	/*background-image: url(../../resources/images/header-bg.gif);
+	background-repeat: repeat-x;*/
+	font-weight: bold;
+	color: #444444;
+	padding-left: 5px;
+}
+div.subheader
+{
+	/*background-image: url(../../resources/images/subheader-bg.gif);
+	background-repeat: repeat-x;*/
+	color: #000000;
+	padding-left: 6px;
+}
+div.content-container
+{
+	/*border: solid 5px #dedede;*/
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	/*overflow: auto;*/
+	/*overflow: hidden;*/
+}
+div.footer, div.button-container, div.pager-container
+{
+	background-color: #dedede;
+	border: solid 1px #cccccc;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-bottom: 5px;
+}
+div.footer
+{
+	padding-top: 3px;
+	padding-bottom: 3px;
+	line-height: 16px;
+}
+div.button-container
+{
+	background-color: inherit!important;
+	border: none!important;
+	text-align: center;
+	line-height: 24px;
+}
+div.button-container input[type=submit], div.button-container input[type=button]
+{
+	font-size: 14px;
+	/*color: #343434;
+	background-color: #dedede;
+	border: solid 1px #dedede;*/
+}
+div.pager-container
+{
+	line-height: 24px;
+}
+
+/*list table*/
+/*取消list table行交替颜色*/
+table.no-alternate-color		{}
+/*取消list table鼠标高亮效果*/
+table.no-mouseover-highlight	{}
+table.list-table
+{
+	border: solid 5px #dedede;
+
+	border-collapse: collapse;
+	/*border: solid 5px #dfdfdf;
+	margin-left: 10px;
+	margin-bottom: 10px;*/
+	width: 100%;
+}
+table.list-table td
+{
+	padding: 3px;
+	border: solid 1px #cccccc;
+}
+table.list-table th
+{
+	/*background-image: url(../../resources/images/list-table-header-bg.gif);*/
+	background-color: #93c2f7;
+	color: #36577a;
+	border: solid 1px #75b5c0;
+	text-align: center;
+	padding: 3px;
+	white-space: nowrap;
+}
+table.list-table tr			{	}
+table.list-table tr.alt		{	background-color: #f3f3f3;}
+table.list-table tr.over	{	background-color: #ffe692;}
+
+/*form table*/
+table.form-table table.list-table {
+	border: inherit!important;
+}
+table.form-table
+{
+	border: solid 5px #dedede;
+	border-collapse: collapse;
+	width: 100%;
+}
+table.form-table>th
+{
+	color: #000000;
+	background-color: #f2f2f2;
+	text-align: left;
+}
+table.form-table>th>td
+{
+	padding: 2px;
+	border-bottom: dotted 1px #cccccc;
+	vertical-align: middle;
+	line-height: 18px;
+}
+table.form-table td.lbl
+{
+	/*text-align: right;*/
+	/*padding-right: 6px;*/
+	padding-left: 6px;
+	white-space: nowrap;
+	border-right: dotted 1px #cccccc;
+	border-left: dotted 1px #cccccc;
+	background-color: #f2f2f2;
+	padding-right: 24px;
+}
+table.form-table td.left-border {
+	border-left: dotted 1px #cccccc;
+}
+table.form-table td.req
+{
+	background-image: url(../../resources/images/icon-star-orange.png);
+	background-position: right center;
+	background-repeat: no-repeat;
+	/*padding-right: 24px;*/
+}
+
+

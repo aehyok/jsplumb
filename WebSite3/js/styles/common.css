@@ -1,0 +1,55 @@
+﻿/*css reset*/
+img						{ border: 0px;}
+
+/*no margin*/
+.no-margin				{ margin: 0px;}
+
+/*clear*/
+.clear-both				{ clear: both;}
+.clear-left				{ clear: left;}
+.clear-right			{ clear: right;}
+
+/*float*/
+.float-left				{ float: left;}
+.float-right			{ float: right;}
+
+/*align*/
+.center					{ text-align: center;}
+.left					{ text-align: left;}
+.right					{ text-align: right;}
+
+/*width & height*/
+.width-auto				{ width: auto!important;}
+.width-100per			{ width: 100%!important;}
+.height-0px				{ height: 0px;}
+
+/*layout table*/
+table.layout			{ border-width: 0px; border-collapse: collapse;}
+table.layout td			{ padding: 0px;}
+
+/*nowrap td*/
+td.nowrap				{ white-space: nowrap;}
+td.normal-wrap			{ white-space: normal!important;}
+
+/*nowrap table*/
+table.nowrap-table td		{ white-space: nowrap;}
+table.normal-wrap-table td	{ white-space: normal;}
+
+/*color*/
+.color-aqua				{ color: aqua;}
+.color-black			{ color: black;}
+.color-blue				{ color: blue;}
+.color-fuchsia			{ color: fuchsia;}
+.color-gray				{ color: gray;}
+.color-green			{ color: green;}
+.color-lime				{ color: lime;}
+.color-maroon			{ color: maroon;}
+.color-navy				{ color: navy;}
+.color-olive			{ color: olive;}
+.color-orange			{ color: orange;}
+.color-purple			{ color: purple;}
+.color-red				{ color: red;}
+.color-silver			{ color: silver;}
+.color-teal				{ color: teal;}
+.color-white			{ color: white;}
+.color-yellow			{ color: yellow;}

@@ -1,0 +1,14 @@
+﻿/*font*/
+body, a, td, input, select, option, textarea
+{
+	font-size: 10.5pt;
+	font-family: "Tahoma" , "宋体";
+}
+
+/*link*/
+a				{	color: #606060; text-decoration: none;}
+a:link			{	color: #000000;}
+a:visited		{	color: #004455;}
+a:hover			{	color: #ff3300; text-decoration: underline;}
+a:active		{	color: #ffbe00;}
+

@@ -1,0 +1,1 @@
+﻿[{"ConnectionId":"con_22","PageSourceId":"state_start1","PageTargetId":"state_flow2","SourceText":"开始","TargetText":"流程","SourceAnchor":"BottomCenter","TargetAnchor":"TopCenter"}]&[{"BlockId":"state_start1","BlockContent":"开始","BlockX":226,"BlockY":99},{"BlockId":"state_flow2","BlockContent":"流程","BlockX":215,"BlockY":395}]
