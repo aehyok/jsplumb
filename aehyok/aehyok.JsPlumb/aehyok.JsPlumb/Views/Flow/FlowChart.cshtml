@@ -1,38 +1,12 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿
+@{
+    ViewBag.Title = "FlowChart";
 }
 
-@*<script src="@Url.Content("~/Scripts/jquery-1.11.1.min.js")" type="text/javascript"></script>*@
-
-<form id="formContent">
-    <div class="flow-container">
-        <div id="content">
-            <div class="content-container">
-                <div class="row" style="margin-top:15px;">
-                    <div class="col-md-2">
-                        <div id="left">
-                            <div class="node radius" id="node1">初始状态</div>
-                            <div class="node" id="node2">案件登记</div>
-                            <div class="node" id="node3">受理立案</div>
-                            <div class="node radius" id="node4">调查审理</div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div id="right">
-                            <p>拖拉到此区域</p>
-                        </div>
-
-                    </div>
-                    <div class="col-md-2">
-                        <div id="save">
-                            <input type="button" value="保存" onclick="save()" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
+<h2>FlowChart</h2>
+@*<script src="@Url.Content("~/Scripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.10.4/js/jquery-ui-1.10.4.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-plugins/jquery.jsPlumb-1.6.2-min.js")" type="text/javascript"></script>*@
 <style type="text/css">
     .dragActive {
         border: 2px dotted orange;
@@ -51,41 +25,47 @@
     }
 
     #node1 {
-        left: 20px;
+        left: 15px;
         top: 100px;
-        background-color:chocolate
     }
 
     #node2 {
-        left: 20px;
+        left: 15px;
         top: 200px;
     }
 
     #node3 {
-        left: 20px;
+        left: 15px;
         top: 300px;
     }
 
     #node4 {
-        left: 20px;
+        left: 15px;
         top: 400px;
     }
 
     #left {
-        border: 1px solid red;
-        width: 100%;
+        border: 1px solid #00bfff;
+        width: 200px;
         height: 750px;
+        position: absolute;
     }
 
     #right {
         border: 1px solid #00bfff;
-        width: 100%;
+        width: 1024px;
+        position: absolute;
         height: 750px;
+        left: 215px;
     }
 
-    /*#save {
-        border: 1px solid green;
-    }*/
+    #save {
+        border: 1px solid #00bfff;
+        width: 150px;
+        height: 750px;
+        position: absolute;
+        left: 1250px;
+    }
 </style>
 <script type="text/javascript">
     function save() {
@@ -151,7 +131,7 @@
                     case "node1":
                         i++;
                         var id = "state_start" + i;
-                        $(this).append('<div class="node" style="border-radius: 25em;background-color:#485FA5;"  id="' + id + '">' + $(ui.helper).html() + '</div>');
+                        $(this).append('<div class="node" style="border-radius: 25em"  id="' + id + '" >' + $(ui.helper).html() + '</div>');
                         $("#" + id).css("left", left).css("top", top);
                         jsPlumb.addEndpoint(id, { anchors: "TopCenter" }, hollowCircle);
                         jsPlumb.addEndpoint(id, { anchors: "RightMiddle" }, hollowCircle);
@@ -302,5 +282,17 @@
             connectorOverlays: [["Arrow", { width: 10, length: 10, location: 1 }]]
         };
 
+    });
+</script>
+
+<div id="formContent">
+    @Html.Raw(ViewData["HtmlText"])
+</div>
+<script type="text/javascript">
+    jsPlumb.ready(function () {
+        jsPlumb.bind("connection", function (connInfo, originalEvent) {
+            connInfo.connection.setLabel(" ")
+        });
+        jsPlumb.connect({ source: "state_start1", target: "state_flow2", anchors: ["BottomCenter", "TopCenter"] }, flowConnector);
     });
 </script>

@@ -48,7 +48,5 @@ public partial class prototype_project_reply_ajax : System.Web.UI.Page
 				fs.Close();
 			}
 		}
-
 	}
-
 }
