@@ -68,6 +68,15 @@
     }
 </style>
 <script type="text/javascript">
+    document.onkeyup = function (e) {//按键信息对象以函数参数的形式传递进来了，就是那个e  
+        var code = e.charCode || e.keyCode;  //取出按键信息中的按键代码(大部分浏览器通过keyCode属性获取按键代码，但少部分浏览器使用的却是charCode)  
+        if (code == 13) {
+            //此处编写用户敲回车后的代码  
+            alert(13);
+        }
+    }  
+
+
     function save() {
         var connects = [];
         $.each(jsPlumb.getAllConnections(), function (idx, connection) {
@@ -219,7 +228,7 @@
                 if ($(this).val().trim() == "") {
                     conn.setLabel("");
                 } else {
-                    conn.setLabel("<span style='display:block;padding:10px;opacity: 0.5;height:auto;background-color:white;border:1px solid #346789;text-align:center;font-size:12px;color:black;border-radius:0.5em;'>" + $(this).val() + "</span>");
+                    conn.setLabel("<span style='display:block;padding:10px;opacity: 0.9;height:auto;background-color:white;border:1px solid #346789;text-align:center;font-size:12px;color:black;border-radius:0.5em;'>" + $(this).val() + "</span>");
                 }
             });
         });
@@ -289,10 +298,5 @@
     @Html.Raw(ViewData["HtmlText"])
 </div>
 <script type="text/javascript">
-    jsPlumb.ready(function () {
-        jsPlumb.bind("connection", function (connInfo, originalEvent) {
-            connInfo.connection.setLabel(" ")
-        });
-        jsPlumb.connect({ source: "state_start1", target: "state_flow2", anchors: ["BottomCenter", "TopCenter"] }, flowConnector);
-    });
+    @Html.Raw(ViewData["JavaScript"])
 </script>

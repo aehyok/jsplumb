@@ -66,6 +66,7 @@ namespace aehyok.JsPlumb.Controllers
             List<JsPlumbBlock> blocks = new JavaScriptSerializer().Deserialize<List<JsPlumbBlock>>(jsonText.Split('&')[1]);
             string htmlText = "";
             string conn = "";
+            string script = "";
             if (blocks.Count > 0)
             {
                 foreach (JsPlumbBlock block in blocks)
@@ -89,10 +90,11 @@ namespace aehyok.JsPlumb.Controllers
 
                 }
                 //Literal1.Text = htmlText;
-                string script = "jsPlumb.ready(function () {" + conn + "});";
+                script = "jsPlumb.ready(function () {" + conn + "});";
             }
             ViewData["HtmlText"] = htmlText;
-            ViewData["JavaScript"] = conn;
+            ViewData["JavaScript"] = script;
+            
             return View();
         }
     }
