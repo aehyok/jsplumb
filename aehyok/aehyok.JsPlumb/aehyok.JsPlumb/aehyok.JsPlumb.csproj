@@ -186,6 +186,8 @@
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery-1.11.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Scripts\jquery-plugins\css\demo.css" />
     <Content Include="Scripts\jquery-plugins\demo-helper-jquery.js" />
     <Content Include="Scripts\jquery-plugins\demo.init.js" />

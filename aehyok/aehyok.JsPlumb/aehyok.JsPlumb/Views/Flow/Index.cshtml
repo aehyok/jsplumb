@@ -13,6 +13,10 @@
                             <div class="node" id="node2">案件登记</div>
                             <div class="node" id="node3">受理立案</div>
                             <div class="node radius" id="node4">调查审理</div>
+
+                            <div class="node" id="node5"><div>rotate旋转</div></div>
+                            <div class="node" id="node6">放缩</div>
+                            <div class="node" id="node7">skew倾斜</div>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -57,7 +61,7 @@
     #node2 {
         left: 20px;
         top: 200px;
-        background-color:#485FA5;
+        background-color: #485FA5;
     }
 
     #node3 {
@@ -70,18 +74,54 @@
         left: 20px;
         top: 400px;
         background-color: #485FA5;
+
     }
 
+    #node5 {
+        left: 50px;
+        top: 500px;
+        width: 100px;
+        height: 100px;
+        background-color: #485FA5;
+        /* Rotate div */
+        transform: rotate(45deg) scale(0.5); /*旋转45度*/
+        -ms-transform: rotate(45deg); /* Internet Explorer */
+        -webkit-transform: rotate(45deg); /* Chrome */
+    }
+
+    #node5 div {
+
+    }
+
+    #node6 {
+        left: 50px;
+        top: 600px;
+        width: 100px;
+        height: 100px;
+        background-color: #485FA5;
+        /* Rotate div */
+        transform: scale(1.5,0.6); /*缩放*/
+    }
+
+    #node7 {
+        left: 50px;
+        top: 700px;
+        width: 100px;
+        height: 100px;
+        background-color: #485FA5;
+        /* Rotate div */
+        transform: skew(25deg,25deg); /*倾斜*/
+    }
     #left {
         border: 1px solid red;
         width: 100%;
-        height: 750px;
+        height: 1750px;
     }
 
     #right {
         border: 1px solid #00bfff;
         width: 100%;
-        height: 750px;
+        height: 1750px;
     }
 
     /*#save {
