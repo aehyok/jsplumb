@@ -72,9 +72,9 @@ namespace aehyok.JsPlumb.Controllers
                 foreach (JsPlumbBlock block in blocks)
                 {
                     if (block.BlockContent == "开始" || block.BlockContent == "结束")
-                        htmlText += "<div class='node radius' id='" + block.BlockId + "'style='left:" + block.BlockX + "px;top:" + block.BlockY + "px;' >" + block.BlockContent + "</div>";
+                        htmlText += "<div class='node radius' id='" + block.BlockId + "'style='left:" + block.BlockX + "px;top:" + block.BlockY + "px;background-color: #485FA5;' onclick='FlowStateCirculate_Click(this)' >" + block.BlockContent + "</div>";
                     else
-                        htmlText += "<div class='node' id='" + block.BlockId + "'style='left:" + block.BlockX + "px;top:" + block.BlockY + "px;' >" + block.BlockContent + "</div>";
+                        htmlText += "<div class='node' id='" + block.BlockId + "'style='left:" + block.BlockX + "px;top:" + block.BlockY + "px;background-color: #485FA5;' onclick='FlowStateCirculate_Click(this)' >" + block.BlockContent + "</div>";
                 }
 
                 foreach (JsPlumbConnect jsplum in list)
@@ -84,7 +84,7 @@ namespace aehyok.JsPlumb.Controllers
                             "jsPlumb.bind(\"connection\",function (connInfo, originalEvent) {	connInfo.connection.setLabel(\" \")});";
                     else
                         conn +=
-                          "jsPlumb.bind(\"connection\",function (connInfo, originalEvent) {	connInfo.connection.setLabel(\"<span style='display:block;padding:10px;opacity: 0.5;height:auto;background-color:white;border:1px solid #346789;text-align:center;font-size:12px;color:black;border-radius:0.5em;'>" + jsplum.ConnectText + "</span>\")});";
+                          "jsPlumb.bind(\"connection\",function (connInfo, originalEvent) {	connInfo.connection.setLabel(\"<span onmouseover='FlowActionClick()' style='display:block;padding:10px;opacity: 0.9;height:auto;background-color:white;text-align:center;font-size:12px;color:black;border-radius:0.5em;'>" + jsplum.ConnectText + "</span>\")});";
                     conn += "jsPlumb.connect({ source: \"" + jsplum.PageSourceId + "\", target: \"" + jsplum.PageTargetId +
                             "\" ,anchors:[\"" + jsplum.SourceAnchor + "\",\"" + jsplum.TargetAnchor + "\"]},flowConnector);";
 

@@ -2,9 +2,7 @@
     ViewBag.Title = "Index";
 }
 
-@*<script src="@Url.Content("~/Scripts/jquery-1.11.1.min.js")" type="text/javascript"></script>*@
-
-<form id="formContent">
+<form id="formContent" onsubmit="return false;">
     <div class="flow-container">
         <div id="content">
             <div class="content-container">
@@ -19,7 +17,7 @@
                     </div>
                     <div class="col-md-8">
                         <div id="right">
-                            <p>拖拉到此区域</p>
+ 
                         </div>
 
                     </div>
@@ -59,16 +57,19 @@
     #node2 {
         left: 20px;
         top: 200px;
+        background-color:#485FA5;
     }
 
     #node3 {
         left: 20px;
         top: 300px;
+        background-color: #485FA5;
     }
 
     #node4 {
         left: 20px;
         top: 400px;
+        background-color: #485FA5;
     }
 
     #left {
@@ -366,14 +367,23 @@
 
 
 
-    //Enter键盘处理事件
-    document.onkeyup = function (e) {
-        var code = e.charCode || e.keyCode;
-        if (code == 13) {
-            //此处编写用户敲回车后的代码  
-            alert(13);
+    ////Enter键盘处理事件
+    //document.onkeyup = function (e) {
+    //    var code = e.charCode || e.keyCode;
+    //    if (code == 13) {
+    //        //此处编写用户敲回车后的代码  
+    //        alert(13);
+    //    }
+    //} 
+
+    //监测input录入框Enter键后不触发刷新页面的操作
+    document.onkeydown = function (e) {
+        var e = e || event;
+        var currKey = e.keyCode || e.which || e.charCode;//支持IE,Chrome
+        if (currKey == 13) {
+            return false;
         }
-    } 
+    }
 
     function save() {
         var connects = [];
@@ -460,7 +470,7 @@
                     case "node2":
                         i++;
                         id = "state_flow" + i;
-                        $(this).append("<div class='node' id='" + id + "'>" + $(ui.helper).html() + "</div>");
+                        $(this).append('<div class="node" style="background-color:#485FA5;" id="' + id + '">' + $(ui.helper).html() + '</div>');
                         $("#" + id).css("left", left).css("top", top);
                         jsPlumb.addEndpoint(id, { anchors: "TopCenter" }, hollowCircle);
                         jsPlumb.addEndpoint(id, { anchors: "RightMiddle" }, hollowCircle);
@@ -474,7 +484,7 @@
                     case "node3":
                         i++;
                         id = "state_decide" + i;
-                        $(this).append("<div class='node' id='" + id + "'>" + $(ui.helper).html() + "</div>");
+                        $(this).append('<div class="node"  style="background-color:#485FA5;" id="' + id + '">' + $(ui.helper).html() +'</div>');
                         $("#" + id).css("left", left).css("top", top);
                         jsPlumb.addEndpoint(id, { anchors: "TopCenter" }, hollowCircle);
                         jsPlumb.addEndpoint(id, { anchors: "RightMiddle" }, hollowCircle);
@@ -488,7 +498,7 @@
                     case "node4":
                         i++;
                         id = "state_end" + i;
-                        $(this).append('<div class="node" style="border-radius: 25em"  id="' + id + '" >' + $(ui.helper).html() + '</div>');
+                        $(this).append('<div class="node" style="border-radius: 25em;background-color:#485FA5;"  id="' + id + '" >' + $(ui.helper).html() + '</div>');
                         $("#" + id).css("left", left).css("top", top);
                         jsPlumb.addEndpoint(id, { anchors: "TopCenter" }, hollowCircle);
                         jsPlumb.addEndpoint(id, { anchors: "RightMiddle" }, hollowCircle);
