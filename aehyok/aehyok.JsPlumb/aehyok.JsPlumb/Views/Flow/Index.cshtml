@@ -483,6 +483,14 @@
         //});
         //oRegionSelect.select();
 
+        //（鼠标按键按下的事件）鼠标在拖拽区域内部选
+        $("#right").on("mousedown", function () {
+            var evt = window.event || arguments[0];
+            var x = evt.clientX;
+            var y = evt.clientY;
+
+        });
+
         $("#left").children().draggable({
             helper: "clone",
             scope: "plaint",
@@ -551,6 +559,10 @@
                 }
             }
         });
+
+
+
+
         //$("#right").on("mouseenter", ".node", function () {
         //    $(this).append('<img src="../resources/images/close2.png"  style="position: absolute;" />');
         //    if ($(this).text() == "开始" || $(this).text() == "结束") {
