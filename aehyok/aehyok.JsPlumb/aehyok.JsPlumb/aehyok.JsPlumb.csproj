@@ -188,6 +188,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-plugins\css\demo.css" />
     <Content Include="Scripts\jquery-plugins\demo-helper-jquery.js" />
     <Content Include="Scripts\jquery-plugins\demo.init.js" />
@@ -214,6 +216,8 @@
     <Content Include="Scripts\jquery-ui-1.10.4\js\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-ui-1.10.4\js\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\jquery-ui-1.10.4\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

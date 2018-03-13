@@ -124,6 +124,16 @@
         height: 1750px;
     }
 
+    .box {
+        background: green;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        opacity: 0.5;
+        cursor: move;
+    }
+
+
     /*#save {
         border: 1px solid green;
     }*/
@@ -473,6 +483,14 @@
         });
     }
     var i = 0;
+    // startX, startY 为鼠标点击时初始坐标
+    // diffX, diffY 为鼠标初始坐标与 box 左上角坐标之差，用于拖动
+    var startX, startY, diffX, diffY;
+    // 是否拖动，初始为 false
+    var dragging = false;
+
+
+
     $(function () {
 
         ////选中元素的初始化方法
@@ -486,10 +504,53 @@
         //（鼠标按键按下的事件）鼠标在拖拽区域内部选
         $("#right").on("mousedown", function () {
             var evt = window.event || arguments[0];
-            var x = evt.clientX;
-            var y = evt.clientY;
+            startX = evt.pageX;
+            startY = evt.pageY;
+            console.log("StartX:"+startX);
+            console.log("StartY:"+startY);
 
+            // 在页面创建 box
+            var active_box = document.createElement("div");
+            active_box.id = "active_box";
+            active_box.className = "box";
+            active_box.style.top = startY + 'px';
+            active_box.style.left = (startX-320) + 'px';
+            $("#right").append(active_box);
+            active_box = null;
         });
+
+        $("#right").on("mousemove", function (e) {
+            // 更新 box 尺寸
+            if (document.getElementById("active_box") !== null) {
+                var ab = document.getElementById("active_box");
+                console.log("e.pageX - startX:" + (e.pageX - startX));
+                console.log("e.pageY - startY:" + (e.pageY - startY));
+                ab.style.width = e.pageX - startX + 'px';
+                ab.style.height = e.pageY - startY + 'px';
+            }
+
+            // 移动，更新 box 坐标
+            if (document.getElementById("moving_box") !== null && dragging) {
+                var mb = document.getElementById("moving_box");
+                mb.style.top = e.pageY - diffY + 'px';
+                mb.style.left = e.pageX - diffX + 'px';
+            }
+        });
+
+        // 鼠标抬起
+        $("#right").on("mouseup",function (e) {
+            // 禁止拖动
+            dragging = false;
+            if (document.getElementById("active_box") !== null) {
+                var ab = document.getElementById("active_box");
+                ab.removeAttribute("id");
+                // 如果长宽均小于 3px，移除 box
+                if (ab.offsetWidth < 3 || ab.offsetHeight < 3) {
+                    ab.remove();
+                }
+            }
+        });
+
 
         $("#left").children().draggable({
             helper: "clone",
