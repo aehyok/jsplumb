@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,15 @@ namespace aehyok.JsPlumb.Controllers
     {
         public ActionResult Index()
         {
+
+            //https://github.com/restsharp/RestSharp
+
+            var client = new RestClient("http://localhost:2088");
+
+
+            var request = new RestRequest("/api/Flow/GetCaseFlowInfo?ajid=1", Method.GET);
+            IRestResponse response = client.Execute(request);
+            var content = response.Content; // raw content as string
             return View();
         }
 
